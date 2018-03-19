@@ -1,6 +1,5 @@
-let nextTodoId = 0
-export const addTodo = text => ({
-    type: 'ADD_TODO',
-    id: nextTodoId++,
-    text
+export const squareClickedAction = (x, y) => ({
+    type: 'SQUARE_CLICKED',
+    x: x,
+    y: y,
 })

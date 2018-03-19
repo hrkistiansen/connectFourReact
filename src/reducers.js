@@ -1,15 +1,22 @@
-import { List, fromJS } from 'immutable';
+import { fromJS } from 'immutable'
 
 const initialState = {
-    squares: fromJS([['00', '01', '02'], ['10', '11', '12']])
+    squares: fromJS(new Array(10).fill(new Array(10).fill(''))),
+    nextPlayer: 'X',
+    winner: undefined,
 }
 
 export default function reducers(state = initialState, action) {
-    const squareList = state.squares;
-    squareList.forEach(square => console.log(square));
+    console.log('reducer start');
     switch (action.type) {
-        case 'ADD_X':
-            return state;
+        case 'SQUARE_CLICKED':
+            const squares = state.squares.setIn([action.y, action.x], state.nextPlayer)
+            const nextPlayer = state.nextPlayer === 'X' ? 'O' : 'X'
+            return {
+                ...state,
+                squares: squares,
+                nextPlayer: nextPlayer
+            };
         default:
             return state
     }
