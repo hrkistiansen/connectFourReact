@@ -1,7 +1,8 @@
 import { fromJS } from 'immutable'
+import Constants from './Constants'
 
 const initialState = {
-    squares: fromJS(new Array(10).fill(new Array(10).fill(''))),
+    squares: fromJS(new Array(Constants.numberOfSquares).fill(new Array(Constants.numberOfSquares).fill(''))),
     nextPlayer: 'X',
     winner: undefined,
 }

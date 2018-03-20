@@ -4,32 +4,32 @@ import { connect } from 'react-redux'
 import Square from './Square'
 
 class Board extends Component {
-    renderSquare(x, y, value) {
-        const compositeKey = y + ':' + x
-        return <Square key={compositeKey} x={x} y={y} squareId={compositeKey} value={value} />
+    render() {
+        const { squares } = this.props
+        return (
+            <div id="board">
+                {squares.map((squaresInRow, y) => {
+                    return this.renderRow(squaresInRow, y)
+                })}
+            </div>
+        );
     }
 
-    renderRow(squaresInRowList, y) {
+    renderRow(squaresInRow, y) {
         return (
             <div className="board-row" key={y}>
-                {squaresInRowList.map(
-                    (Square, x) => {
-                        return this.renderSquare(x, y, this.props.squares.getIn([y, x]))
+                {squaresInRow.map(
+                    (_, x) => {
+                        const value = this.props.squares.getIn([y, x])
+                        return this.renderSquare(x, y, value)
                     }
                 )}
             </div>
         )
     }
 
-    render() {
-        const { squares } = this.props
-        return (
-            <div id="board">
-                {squares.map((squaresInRowList, y) => {
-                    return this.renderRow(squaresInRowList, y)
-                })}
-            </div>
-        );
+    renderSquare(x, y, value) {
+        return <Square key={x + y} x={x} y={y} value={value} />
     }
 }
 

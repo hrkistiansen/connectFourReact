@@ -5,7 +5,7 @@ class Result extends Component {
     render() {
         const { squares } = this.props;
         return (
-            <div>Result: {squares.size}</div>
+            <div>Result: {this.props.winner}</div>
         );
     }
 }
