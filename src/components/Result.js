@@ -3,15 +3,15 @@ import { connect } from 'react-redux'
 
 class Result extends Component {
     render() {
-        const { squares } = this.props;
+        const winner = this.props.winner ? 'The winner is ' + this.props.winner : 'No winner yet!';
         return (
-            <div>Result: {this.props.winner}</div>
+            <div className={this.props.winner ? 'won' : ''}><p>{winner}</p></div>
         );
     }
 }
 
 const mapStateToProps = state => ({
-    squares: state.squares,
+    winner: state.winner,
 })
 
 export default connect(mapStateToProps)(Result)

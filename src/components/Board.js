@@ -4,15 +4,8 @@ import { connect } from 'react-redux'
 import Square from './Square'
 
 class Board extends Component {
-    render() {
-        const { squares } = this.props
-        return (
-            <div id="board">
-                {squares.map((squaresInRow, y) => {
-                    return this.renderRow(squaresInRow, y)
-                })}
-            </div>
-        );
+    renderSquare(x, y, value) {
+        return <Square key={x + y} x={x} y={y} value={value} />
     }
 
     renderRow(squaresInRow, y) {
@@ -28,9 +21,17 @@ class Board extends Component {
         )
     }
 
-    renderSquare(x, y, value) {
-        return <Square key={x + y} x={x} y={y} value={value} />
+    render() {
+        const { squares } = this.props
+        return (
+            <div id="board">
+                {squares.map((squaresInRow, y) => {
+                    return this.renderRow(squaresInRow, y)
+                })}
+            </div>
+        );
     }
+
 }
 
 const mapStateToProps = state => ({

@@ -17,7 +17,9 @@ ol, ul {
   margin-bottom: 10px;
 }
 
-.square {
+.square, 
+.square:disabled,
+.square[disabled] {
   background: #fff;
   border: 1px solid #999;
   float: left;
@@ -30,6 +32,7 @@ ol, ul {
   padding: 0;
   text-align: center;
   width: 34px;
+  color: black;
 }
 
 .square:focus {
@@ -47,5 +50,9 @@ ol, ul {
 
 .game-info {
   margin-left: 20px;
+}
+
+.won > p {
+  font-weight: bold;
 }
 

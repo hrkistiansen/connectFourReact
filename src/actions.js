@@ -3,3 +3,7 @@ export const squareClickedAction = (x, y) => ({
     x: x,
     y: y,
 })
+
+export const restartButtonAction = () => ({
+    type: 'RESTART'
+})
