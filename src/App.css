@@ -37,11 +37,7 @@ ol, ul {
   border: none;
 }
 .square button[disabled]{
-
-}
-
-.square button[enabled] {
-
+  background: #ddd;
 }
 
 .square button:focus {
@@ -55,13 +51,32 @@ ol, ul {
 .game {
   display: flex;
   flex-direction: row;
+  text-align: center;
 }
 
 .game-info {
   margin-left: 20px;
 }
 
-.won > p {
+#winnertext > p {
   font-weight: bold;
 }
 
+h1, .winner {
+  color: #f35626;
+  background-image: linear-gradient(92deg, #f35626 0%,#feab3a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: hue 30s infinite linear;
+}
+
+@keyframes hue {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  
+  to {
+    filter: hue-rotate(-360deg);
+  }
+}

@@ -3,9 +3,13 @@ import { connect } from 'react-redux'
 
 class Result extends Component {
     render() {
-        const winner = this.props.winner ? 'The winner is ' + this.props.winner : 'No winner yet!';
+        const winner = this.props.winner ? this.props.winner + " won the game!" : 'No winner yet!';
+        let winnerClassName = this.props.winner ? 'winner' : ''
+        if (this.props.winner) {
+            winnerClassName = 'animated infinite bounce' // + winnerClassName
+        }
         return (
-            <div className={this.props.winner ? 'won' : ''}><p>{winner}</p></div>
+            <div id="winnertext" className={winnerClassName}><p>{winner}</p></div>
         );
     }
 }
