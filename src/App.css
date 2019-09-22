@@ -17,22 +17,30 @@ ol, ul {
   margin-bottom: 10px;
 }
 
-.square, 
-.square:disabled,
-.square[disabled] {
-  background: #fff;
+.square {
   border: 1px solid #999;
   float: left;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 34px;
   height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
   text-align: center;
   width: 34px;
+}
+
+.square button {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 30px;
+  background: #fff;
+  width: 34px;
+  height: 34px;
   color: black;
+  border: none;
+}
+.square button[disabled]{
+
+}
+
+.square button[enabled] {
+
 }
 
 .square:focus {
