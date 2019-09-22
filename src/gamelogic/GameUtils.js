@@ -75,3 +75,14 @@ export const checkWinner = (squares) => {
     return winner
 }
 
+export const findLandingSquare = (numSquares, squares, x) => {
+    for (let ii = 0; ii < numSquares; ii++) {
+        const squareValue = squares.getIn([ii, x])
+        //console.log("val: " +  squareValue === "O" || squareValue === "X" ? true : false)
+        if (squareValue === "O" || squareValue === "X") {
+            return ii - 1
+        }
+    }
+    return numSquares - 1;
+}
+

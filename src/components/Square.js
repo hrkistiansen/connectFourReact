@@ -5,7 +5,7 @@ import { tsImportEqualsDeclaration } from '@babel/types'
 
 class Square extends Component {
     render() {
-        const disabled = this.props.winner || this.props.value ? true : false
+        const disabled = this.props.winner ? true : false
         const lastMove = this.props.x === this.props.lastMove.x && this.props.y === this.props.lastMove.y
         return (
             <div className="square">
