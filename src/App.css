@@ -3,26 +3,22 @@ body {
   margin: 20px;
 }
 
-ol, ul {
-  padding-left: 30px;
+.game {
+  float: left;
+  text-align: center;
 }
 
-.board-row:after {
-  clear: both;
-  content: "";
-  display: table;
-}
-
-.status {
-  margin-bottom: 10px;
+.board {
+  float: left;
+  text-align: center;
 }
 
 .square {
   border: 1px solid #999;
   float: left;
-  height: 34px;
+  height: 30px;
   text-align: center;
-  width: 34px;
+  width: 30px;
 }
 
 .square button,
@@ -31,8 +27,8 @@ ol, ul {
   font-weight: bold;
   line-height: 30px;
   background: #fff;
-  width: 34px;
-  height: 34px;
+  width: 30px;
+  height: 30px;
   color: black;
   border: none;
 }
@@ -44,25 +40,27 @@ ol, ul {
   outline: none;
 }
 
-.kbd-navigation .square:focus {
-  background: #ddd;
+.status {
+  margin-bottom: 10px;
 }
 
-.game {
-  display: flex;
-  flex-direction: row;
-  text-align: center;
+.kbd-navigation .square:focus {
+  background: #ddd;
 }
 
 .game-info {
   margin-left: 20px;
 }
 
-#winnertext > p {
+#winnertext-wrapper {
+  text-align: center;
+}
+
+.winnertext p {
   font-weight: bold;
 }
 
-h1, .winner {
+h1 {
   color: #f35626;
   background-image: linear-gradient(92deg, #f35626 0%,#feab3a 100%);
   -webkit-background-clip: text;
@@ -79,4 +77,13 @@ h1, .winner {
   to {
     filter: hue-rotate(-360deg);
   }
+}
+
+.restart {
+  text-align: center;
+}
+
+.restart button {
+  margin-top: 20px;
+  border: 1px solid #999;
 }

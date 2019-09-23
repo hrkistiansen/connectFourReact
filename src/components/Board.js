@@ -24,7 +24,7 @@ class Board extends Component {
     render() {
         const { squares } = this.props
         return (
-            <div id="board">
+            <div className="board">
                 {squares.map((squaresInRow, y) => {
                     return this.renderRow(squaresInRow, y)
                 })}

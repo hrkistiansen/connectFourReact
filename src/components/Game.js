@@ -7,11 +7,11 @@ import Ingress from './Ingress'
 
 class Game extends Component {
     render() {
-        return <div id="game">
+        return <div className="game">
             <Ingress />
             <Result />
             <Board />
-            <Restart />
+            <Restart style={{float: "left"}} />
         </div>
     }
 }

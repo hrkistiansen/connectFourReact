@@ -5,11 +5,13 @@ import { restartButtonAction } from '../actions'
 class Restart extends Component {
     render() {
         return (
-            <p>
-                <button onClick={this.props.onClick}>
-                    Restart game
-            </button >
-            </p>
+            <div className="restart">
+                <p>
+                    <button onClick={this.props.onClick}>
+                        Restart game
+                    </button >
+                </p>
+            </div>
         )
     }
 }
