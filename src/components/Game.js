@@ -7,7 +7,7 @@ import Ingress from './Ingress'
 
 class Game extends Component {
     render() {
-        return <div className="game">
+        return <div className="game container-fluid">
             <Ingress />
             <Result />
             <Board />

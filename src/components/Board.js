@@ -10,24 +10,26 @@ class Board extends Component {
 
     renderRow(squaresInRow, y) {
         return (
-            <div className="board-row" key={y}>
-                {squaresInRow.map(
-                    (_, x) => {
-                        const value = this.props.squares.getIn([y, x])
-                        return this.renderSquare(x, y, value)
-                    }
-                )}
-            </div>
+                <div className="board-row row flex-nowrap" key={y}>
+                        {squaresInRow.map(
+                            (_, x) => {
+                                const value = this.props.squares.getIn([y, x])
+                                return this.renderSquare(x, y, value)
+                            }
+                        )}
+                </div>
         )
     }
 
     render() {
         const { squares } = this.props
         return (
-            <div className="board">
-                {squares.map((squaresInRow, y) => {
-                    return this.renderRow(squaresInRow, y)
-                })}
+            <div className="board row">
+                <div className="container-fluid">
+                    {squares.map((squaresInRow, y) => {
+                        return this.renderRow(squaresInRow, y)
+                    })}
+                </div>
             </div>
         );
     }

@@ -5,9 +5,9 @@ import { restartButtonAction } from '../actions'
 class Restart extends Component {
     render() {
         return (
-            <div className="restart">
+            <div className="restart row">
                 <p>
-                    <button onClick={this.props.onClick}>
+                    <button className="btn btn-primary restart" onClick={this.props.onClick}>
                         Restart game
                     </button >
                 </p>

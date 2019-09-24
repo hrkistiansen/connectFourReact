@@ -6,10 +6,12 @@ class Result extends Component {
         const winner = this.props.winner ? this.props.winner + " won the game!" : 'No winner yet!';
         let winnerClassName = this.props.winner ? 'winner' : ''
         if (this.props.winner) {
-            winnerClassName = 'animated infinite heartBeat' // + winnerClassName
+            winnerClassName = 'animated infinite heartBeat text-center'
+        } else {
+            winnerClassName = 'text-center'
         }
         return (
-            <div id="winnertext-wrapper">
+            <div className="row container-fluid winnertext-wrapper">
                 <div id="winnertext" className={winnerClassName}>
                     <p>{winner}</p>
                 </div>
